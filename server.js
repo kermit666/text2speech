@@ -7,5 +7,10 @@ var say = function(text){
   request(url).pipe(new Lame.Decoder).pipe(new Speaker);
 };
 
-var text = 'Say hello to my little friend';
-say(text);
+var bottle = function(num){
+  say(num + ' green bottles, standing on the wall');
+};
+
+for(var i=10; i>0; --i){
+  setTimeout(bottle, 10 - i, i);
+}
